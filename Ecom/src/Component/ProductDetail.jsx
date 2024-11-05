@@ -15,7 +15,7 @@ function ProductDetail() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/products/${id}`); // Fetch product details by ID
+        const response = await axios.get(`https://zoroz-backend-w2wh.onrender.com/api/products/${id}`); // Fetch product details by ID
         setProduct(response.data);
       } catch (err) {
         setError("Failed to load product details. Please try again later.");
