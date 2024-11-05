@@ -1,7 +1,7 @@
-// src/components/ProductCard.jsx
+
 import React, { useState } from "react";
 import { useCart } from "../context/CartContext";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
   const { addToCart } = useCart();
@@ -22,7 +22,8 @@ function ProductCard({ product }) {
 
   return (
     <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 p-4">
-      <Link to={`/product/${product.id}`} className="block"> {/* Link to product detail page */}
+      {/* Link to product detail page */}
+      <Link to={`/product/${product.id}`} className="block">
         <img
           src={product.image}
           alt={product.name}
