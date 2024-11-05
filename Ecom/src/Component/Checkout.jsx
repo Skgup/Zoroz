@@ -23,7 +23,7 @@ const Checkout = () => {
 
             if (response.data.success) {
                 toast.success("Payment successful!");
-                clearCart(); // Clear the cart after successful payment
+             
                 navigate("/payment-success"); // Navigate to the payment success page
             } else {
                 toast.error(response.data.message || "Payment failed. Please try again.");
