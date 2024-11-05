@@ -1,4 +1,4 @@
-// src/components/ProductDetail.jsx
+
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -15,7 +15,7 @@ function ProductDetail() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`https://zoroz-backend-w2wh.onrender.com/api/products/${id}`); // Fetch product details by ID
+        const response = await axios.get(`https://zoroz-backend-w2wh.onrender.com/api/products/${id}`); // Backend URL
         setProduct(response.data);
       } catch (err) {
         setError("Failed to load product details. Please try again later.");
@@ -98,7 +98,6 @@ function ProductDetail() {
       <div className="mt-10 border-t pt-6">
         <h3 className="text-2xl font-bold text-gray-800">Product Details</h3>
         <p className="text-gray-600 mt-2">{product.details}</p>
-        <p className="text-gray-600 mt-2">{product.description}</p>
       </div>
     </div>
   );
