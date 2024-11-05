@@ -1,4 +1,4 @@
-
+// src/components/Checkout.jsx
 import React, { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
 import axios from "axios";
@@ -21,25 +21,26 @@ const Checkout = () => {
                 totalAmount: totalAmount,
             });
 
-            if (response.data.success) {
+            // Check if the backend response has a success flag
+            if (response.data && response.data.success) {
                 toast.success("Payment successful!");
                 clearCart(); // Clear the cart after successful payment
                 navigate("/payment-success"); // Navigate to the payment success page
             } else {
-                toast.error(response.data.message || "Payment failed. Please try again.");
+                toast.error("Payment failed. Please try again.");
             }
         } catch (error) {
             console.error("Payment error:", error);
-            const errorMessage = error.response?.data?.message || "Payment failed. Please check your connection and try again.";
-            toast.error(errorMessage);
+            toast.error("Payment failed. Please check your connection and try again.");
         } finally {
             setLoading(false);
         }
     };
 
     useEffect(() => {
+        // Redirect to home if cart is empty
         if (state.items.length === 0) {
-            navigate("/"); // Redirect to home if cart is empty
+            navigate("/"); 
         }
     }, [state.items, navigate]);
 
@@ -84,3 +85,4 @@ const Checkout = () => {
 };
 
 export default Checkout;
+
