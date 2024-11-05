@@ -26,11 +26,12 @@ const Checkout = () => {
                 clearCart(); // Clear the cart after successful payment
                 navigate("/payment-success"); // Navigate to the payment success page
             } else {
-                toast.error("Payment failed. Please try again.");
+                toast.error(response.data.message || "Payment failed. Please try again.");
             }
         } catch (error) {
             console.error("Payment error:", error);
-            toast.error("Payment failed. Please check your connection and try again.");
+            const errorMessage = error.response?.data?.message || "Payment failed. Please check your connection and try again.";
+            toast.error(errorMessage);
         } finally {
             setLoading(false);
         }
