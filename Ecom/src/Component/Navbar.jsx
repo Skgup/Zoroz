@@ -11,6 +11,7 @@ function Navbar() {
       <Link to="/" className="text-2xl font-bold">
         eShop
       </Link>
+       <SearchBar/>
       <Link to="/checkout" className="relative">
         🛒
         {state?.items?.length > 0 && (
