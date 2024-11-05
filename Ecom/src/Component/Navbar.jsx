@@ -1,7 +1,8 @@
-// src/components/Navbar.jsx
+
 import React from "react";
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 function Navbar() {
   const { state } = useCart();
