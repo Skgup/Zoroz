@@ -5,7 +5,7 @@ const CartContext = createContext();
 const initialState = {
   items: [],
 };
-
+const url = "https://zoroz-backend-w2wh.onrender.com"
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
