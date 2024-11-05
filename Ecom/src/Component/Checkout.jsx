@@ -1,4 +1,4 @@
-// src/components/Checkout.jsx
+
 import React, { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
 import axios from "axios";
@@ -16,7 +16,7 @@ const Checkout = () => {
     const handlePayment = async () => {
         setLoading(true);
         try {
-            const response = await axios.post("http://localhost:5000/api/checkout", {
+            const response = await axios.post("https://zoroz-backend-w2wh.onrender.com/api/checkout", {
                 items: state.items,
                 totalAmount: totalAmount,
             });
