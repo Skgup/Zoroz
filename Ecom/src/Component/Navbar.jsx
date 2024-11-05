@@ -2,7 +2,7 @@
 import React from "react";
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
-import SearchBar from "./SearchBar";
+
 
 function Navbar() {
   const { state } = useCart();
@@ -12,7 +12,7 @@ function Navbar() {
       <Link to="/" className="text-2xl font-bold">
         eShop
       </Link>
-       <SearchBar/>
+
       <Link to="/checkout" className="relative">
         🛒
         {state?.items?.length > 0 && (
